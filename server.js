@@ -47,10 +47,14 @@ app.get('/api/movies/:movie_id', (req, res) => {
 );
 
 // Default response for any other request (Not Found)
-app.use((req, res) => {
-  res.status(404).end();
+// app.use((req, res) => {
+//   res.status(404).end();
+// });
+app.get('/', (req, res) => {
+  res.send('Hello World');
 });
 
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Example app listening at http://localhost:${PORT}`);
 });
